@@ -1,0 +1,13 @@
+excluded:
+- Pods
+- StampytTests
+- StampytUITests
+
+disabled_rules:
+ - trailing_whitespace
+
+line_length:
+ ignores_function_declarations: true
+ ignores_comments: true
+ warning: 210
+ error: 250

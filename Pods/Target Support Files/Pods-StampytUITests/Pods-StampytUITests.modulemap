@@ -1,0 +1,6 @@
+framework module Pods_StampytUITests {
+  umbrella header "Pods-StampytUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

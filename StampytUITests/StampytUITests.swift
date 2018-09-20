@@ -12,15 +12,8 @@ class StampytUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
     override func tearDown() {
@@ -28,9 +21,73 @@ class StampytUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // Test en appuyant sur le bouton annuler lors de la prise de la première photo
+    func testCancelFirstPicture() {
+        
+        let app = XCUIApplication()
+        app.buttons["camera button"].tap()
+        app.buttons["Annuler"].tap()
+        
+    }
+    
+    // Test en appuyant sur le bouton annuler lors de la prise de la deuxième photo
+    func testCancelSecondPicture() {
+        
+        let app = XCUIApplication()
+        let button = app.buttons["camera button"]
+        button.tap()
+        app.buttons["Valider"].tap()
+        button.tap()
+        app.buttons["Annuler"].tap()
+        
+    }
+    
+    // Test lors de l'appuie sur Annuler au moment de l'envoi
+    func testCancelSending() {
+        
+        let app = XCUIApplication()
+        let button = app.buttons["camera button"]
+        button.tap()
+        
+        let validerButton = app.buttons["Valider"]
+        validerButton.tap()
+        button.tap()
+        validerButton.tap()
+        app.buttons["Annuler"].tap()
+
+    }
+    
+    // Test la navigation entre les photos avant l'envoi
+    func testArrows() {
+        
+        let app = XCUIApplication()
+        let button = app.buttons["camera button"]
+        button.tap()
+        
+        let validerButton = app.buttons["Valider"]
+        validerButton.tap()
+        button.tap()
+        validerButton.tap()
+        
+        app.buttons["right arrow"].tap()
+        app.buttons["left arrow"].tap()
+        
+    }
+    
+    // Test l'envoi de photo
+    func testSendPicture() {
+        
+        let app = XCUIApplication()
+        let button = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .button).element
+        button.tap()
+        
+        let validerButton = app.buttons["Valider"]
+        validerButton.tap()
+        button.tap()
+        validerButton.tap()
+        
+        app.buttons["Envoyer"].tap()
+        
     }
     
 }

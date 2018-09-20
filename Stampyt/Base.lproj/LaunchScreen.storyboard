@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,15 +15,48 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car_logo" translatesAutoresizingMaskIntoConstraints="NO" id="UCU-Yo-kFB">
+                                <rect key="frame" x="85" y="30" width="398" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stampyt" translatesAutoresizingMaskIntoConstraints="NO" id="ZMH-G5-mwp">
+                                <rect key="frame" x="85" y="128" width="398" height="64"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donnez de la visibilité à vos voitures" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dl7-Kp-TqU">
+                                <rect key="frame" x="137" y="200" width="294.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VUG-Dp-BP3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZMH-G5-mwp" firstAttribute="top" secondItem="UCU-Yo-kFB" secondAttribute="bottom" constant="-30" id="6zX-T2-DCw"/>
+                            <constraint firstItem="Dl7-Kp-TqU" firstAttribute="top" secondItem="ZMH-G5-mwp" secondAttribute="bottom" constant="8" id="9NA-PQ-hUO"/>
+                            <constraint firstItem="UCU-Yo-kFB" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="30" id="H5n-fn-Nvl"/>
+                            <constraint firstItem="UCU-Yo-kFB" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.7" id="Qe3-k4-T9R"/>
+                            <constraint firstItem="Dl7-Kp-TqU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="U0S-pT-EsQ"/>
+                            <constraint firstItem="UCU-Yo-kFB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="YMS-VG-NNC"/>
+                            <constraint firstItem="ZMH-G5-mwp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dEN-cz-Oyu"/>
+                            <constraint firstItem="ZMH-G5-mwp" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.2" id="pQ0-le-ssz"/>
+                            <constraint firstItem="ZMH-G5-mwp" firstAttribute="width" secondItem="UCU-Yo-kFB" secondAttribute="width" id="uBf-N2-pFX"/>
+                            <constraint firstItem="ZMH-G5-mwp" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="yZO-96-Ssn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.623688155922046" y="373.60000000000002"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="car_logo" width="1434" height="466"/>
+        <image name="stampyt" width="512" height="334"/>
+    </resources>
 </document>

@@ -1,0 +1,6 @@
+framework module Pods_Stampyt {
+  umbrella header "Pods-Stampyt-umbrella.h"
+
+  export *
+  module * { export * }
+}
