@@ -21,16 +21,20 @@ class StampytTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testBody() {
+        let imageDetails = ShootingService.shared.createImagesDetails(numberOfPhoto: 1)
+        let body = ShootingService.shared.createBody(withImageDetails: imageDetails)
+        
+        var correctBody = true
+        
+        for key in body.keys {
+            correctBody = correctBody && key.contains(Constants.Web.ParameterOriginal) ||
+                key.contains(Constants.Web.ParameterStamped) ||
+                key.contains(Constants.Web.ParameterProcesses) ||
+                key.contains(Constants.Web.ParameterImagesDetails)
         }
+        
+        XCTAssertTrue(correctBody, "Le body est incorrect")
     }
     
 }

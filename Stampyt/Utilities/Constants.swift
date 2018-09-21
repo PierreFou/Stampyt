@@ -21,6 +21,11 @@ struct Constants {
         static let UrlSendShooting = "\(Constants.Web.UrlUser)\(Constants.Web.UserId)/shootings"
         static let StampId = "bd17a4e5-2688-4db3-93b1-877331a1d7f7"
         
+        static let ParameterProcesses = "processes"
+        static let ParameterOriginal = "imageOriginal_"
+        static let ParameterStamped = "imageOriginal_"
+        static let ParameterImagesDetails = "imagesDetails"
+        
     }
     
     struct Identifier {
@@ -36,7 +41,7 @@ struct Constants {
         static let Okay = "Ok"
         
         static let Error = "Erreur"
-        static let ErrorSending = "Une erreur est survenue durant l'envoie, veuillez réessayer plus tard"
+        static let ErrorSending = "Une erreur est survenue durant l'envoi, veuillez réessayer plus tard"
         static let NoStamp = "Impossible de trouver le filtre, veuillez réessayer plus tard"
     }
 }

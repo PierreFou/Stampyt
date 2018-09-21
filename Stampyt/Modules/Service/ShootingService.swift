@@ -37,19 +37,19 @@ class ShootingService {
     func createBody(withImageDetails imagesDetails: String) -> [String: Any] {
         
         var body: [String: Any] = [
-            "processes": "{\"cropping\":[\"\"]}",
-            "imagesDetails": imagesDetails
+            Constants.Web.ParameterProcesses: "{\"cropping\":[\"\"]}",
+            Constants.Web.ParameterImagesDetails: imagesDetails
         ]
         
         for (index, image) in originalPictures.enumerated() {
             if let dataImage = image.jpegData(compressionQuality: 1) {
-                body["imageOriginal_\(index)"] = dataImage
+                body["\(Constants.Web.ParameterOriginal)\(index)"] = dataImage
             }
         }
         
         for (index, image) in stampedPictures.enumerated() {
             if let dataImage = image.jpegData(compressionQuality: 1) {
-                body["imageStamped_\(index)"] = dataImage
+                body["\(Constants.Web.ParameterStamped)\(index)"] = dataImage
             }
         }
         
@@ -61,8 +61,8 @@ class ShootingService {
         var imagesDetails = "["
         
         for index in 0..<numberOfPhoto {
-            imagesDetails += "{\"name\": \"imageStamped_\(index)\", \"maskId\": \"\", \"stampId\": \"\(Constants.Web.StampId)\"},"
-            imagesDetails += "{\"name\": \"imageStamped_\(index)\", \"maskId\": \"\", \"stampId\": \"\(Constants.Web.StampId)\"},"
+            imagesDetails += "{\"name\": \"\(Constants.Web.ParameterOriginal)\(index)\", \"maskId\": \"\", \"stampId\": \"\(Constants.Web.StampId)\"},"
+            imagesDetails += "{\"name\": \"\(Constants.Web.ParameterStamped)\(index)\", \"maskId\": \"\", \"stampId\": \"\(Constants.Web.StampId)\"},"
         }
         
         imagesDetails.removeLast()

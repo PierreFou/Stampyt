@@ -34,10 +34,11 @@ class StampytUITests: XCTestCase {
     func testCancelSecondPicture() {
         
         let app = XCUIApplication()
-        let button = app.buttons["camera button"]
-        button.tap()
+        let cameraButtonButton = app.buttons["camera button"]
+        cameraButtonButton.tap()
+        sleep(1) // Temps de réflexion de l'utilisateur avant validation
         app.buttons["Valider"].tap()
-        button.tap()
+        cameraButtonButton.tap()
         app.buttons["Annuler"].tap()
         
     }
@@ -49,9 +50,12 @@ class StampytUITests: XCTestCase {
         let button = app.buttons["camera button"]
         button.tap()
         
+        sleep(1) // Temps de réflexion de l'utilisateur avant validation
         let validerButton = app.buttons["Valider"]
         validerButton.tap()
         button.tap()
+        
+        sleep(1) // Temps de réflexion de l'utilisateur avant validation
         validerButton.tap()
         app.buttons["Annuler"].tap()
 
@@ -64,9 +68,12 @@ class StampytUITests: XCTestCase {
         let button = app.buttons["camera button"]
         button.tap()
         
+        sleep(1) // Temps de réflexion de l'utilisateur avant validation
         let validerButton = app.buttons["Valider"]
         validerButton.tap()
         button.tap()
+        
+        sleep(1) // Temps de réflexion de l'utilisateur avant validation
         validerButton.tap()
         
         app.buttons["right arrow"].tap()
@@ -82,8 +89,11 @@ class StampytUITests: XCTestCase {
         button.tap()
         
         let validerButton = app.buttons["Valider"]
+        sleep(1) // Temps de réflexion de l'utilisateur avant validation
         validerButton.tap()
         button.tap()
+        
+        sleep(1) // Temps de réflexion de l'utilisateur avant validation
         validerButton.tap()
         
         app.buttons["Envoyer"].tap()
