@@ -18,7 +18,11 @@ class ImagePreviewViewController: UIViewController {
         super.viewDidLoad()
         
         // Ajout du filtre à l'image
-        applyStamp()
+        if let image = imageToShow, let stampedImage = image.applyStamp(withSize: previewImageView.frame.size, andBounds: previewImageView.bounds) {
+            previewImageView.image = stampedImage
+        } else {
+            displayAlert(title: Constants.Libelle.Error, message: Constants.Libelle.NoStamp, button: Constants.Libelle.Okay)
+        }
     }
     
     @IBAction func validateClicked() {
@@ -31,26 +35,6 @@ class ImagePreviewViewController: UIViewController {
     
     @IBAction func cancelClicked() {
         dismiss(animated: true, completion: nil)
-    }
-    
-    // Applique le filtre sur l'image chargée
-    func applyStamp() {
-        if let image = imageToShow, let stamp = UIImage(named: "stamp") {
-            
-            UIGraphicsBeginImageContext(previewImageView.frame.size)
-            
-            let areaSize = previewImageView.bounds
-            image.draw(in: areaSize)
-            
-            stamp.draw(in: areaSize, blendMode: .normal, alpha: 0.8)
-            
-            let stampedImage = UIGraphicsGetImageFromCurrentImageContext()!
-            UIGraphicsEndImageContext()
-            
-            previewImageView.image = stampedImage
-        } else {
-            displayAlert(title: Constants.Libelle.Error, message: Constants.Libelle.NoStamp, button: Constants.Libelle.Okay)
-        }
     }
     
 }

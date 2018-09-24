@@ -12,8 +12,12 @@ struct Constants {
     struct Web {
         static let UserId = "85"
         
+        static let HeaderTypeKey = "Content-Type"
+        static let HeaderTypeValue = "multipart/form-data"
+        static let HeaderApiKey = "x-api-key"
+        static let HeaderApiValue = "xhramLZUnE1Lw5QRAzYG52V2eofQyZQv25O0cnue"
+ 
         static let Header = [
-            "Content-Type": "multipart/form-data",
             "x-api-key": "xhramLZUnE1Lw5QRAzYG52V2eofQyZQv25O0cnue"
         ]
         static let BaseUrl = "https://api.stampyt.io/rec/"
@@ -22,8 +26,9 @@ struct Constants {
         static let StampId = "bd17a4e5-2688-4db3-93b1-877331a1d7f7"
         
         static let ParameterProcesses = "processes"
+        static let ParameterProcessesValue = "{\"cropping\":[\"\"]}"
         static let ParameterOriginal = "imageOriginal_"
-        static let ParameterStamped = "imageOriginal_"
+        static let ParameterStamped = "imageStamped_"
         static let ParameterImagesDetails = "imagesDetails"
         
     }
