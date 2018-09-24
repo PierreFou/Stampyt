@@ -31,7 +31,7 @@ class ShootingService {
                         switch encodingResult {
                         case .success(let upload, _, _):
                             upload.responseString { response in
-                                if response.response?.statusCode == 200 {
+                                if response.response?.statusCode == 201 {
                                     completion(true)
                                 } else {
                                     completion(false)
